@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação e Códigos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .code-section {
+            margin-bottom: 20px;
+        }
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Documentação e Códigos</h1>
+        
+        <h2>Código da Classe LoginScreen</h2>
+        <div class="code-section">
+            <pre id="codeLoginScreen"></pre>
+        </div>
+        
+        <h2>Código do Teste LoginScreenTest</h2>
+        <div class="code-section">
+            <pre id="codeLoginScreenTest"></pre>
+        </div>
+
+        <h2>Documentação Javadoc</h2>
+        <a href="sumary.html" class="btn">Referências</a>
+    </div>
+
+    <script>
+        // Código da classe LoginScreen
+        var codigoLoginScreen = `
+/**
+ * Classe responsável por autenticar usuários.
+ */
+public class LoginScreen {
+    
+    /**
+     * Método para autenticar um usuário.
+     * 
+     * @param usuario O nome de usuário.
+     * @param senha A senha do usuário.
+     * @return true se a autenticação for bem-sucedida, false caso contrário.
+     */
+    public boolean autenticar(String usuario, String senha) {
+        // Verificar se o usuário e a senha correspondem aos valores esperados
+        if (usuario.equals("usuario") && senha.equals("senha")) {
+            return true; // Usuário autenticado com sucesso
+        } else {
+            return false; // Autenticação falhou
+        }
+    }
+}
+        `;
+        
+        document.getElementById("codeLoginScreen").textContent = codigoLoginScreen;
+
+        // Código do teste LoginScreenTest
+        var codigoLoginScreenTest = `
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class LoginScreenTest {
+    
+    @Test
+    public void testAutenticacao() {
+        LoginScreen loginScreen = new LoginScreen();
+        assertTrue(loginScreen.autenticar("usuario", "senha"));
+    }
+}
+// ETAPA 1 - Falhou. pois o método autenticar não existe, assim como o LoginScreen, e indicando que o pacote do Junit não existe.
+        `;
+        
+        document.getElementById("codeLoginScreenTest").textContent = codigoLoginScreenTest;
+    </script>
+</body>
+</html>
